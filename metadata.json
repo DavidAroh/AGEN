@@ -1,0 +1,6 @@
+{
+  "name": "AGEN Landing Page",
+  "description": "The universal platform for building and deploying AI agents in under 5 minutes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
