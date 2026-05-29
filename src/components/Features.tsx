@@ -143,24 +143,24 @@ export function Features({ id = "features" }: { id?: string }) {
       {/* Heading/Title */}
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
         <div>
-          <span className="text-[10px] font-mono tracking-widest text-brand-orange uppercase font-black">// CORE CAPABILITIES SHARD ATOMICS</span>
-          <h2 className="font-display text-4xl font-black uppercase tracking-tighter text-white sm:text-5xl mt-2">
-            THE AGEN FEATURE MATRIX_
+          <span className="text-[10px] font-sans tracking-wider text-brand-orange uppercase font-bold">// Core Capabilities & Development Roadmap</span>
+          <h2 className="font-display text-4xl font-extrabold uppercase tracking-tight text-white sm:text-5xl mt-2">
+            Features & Capabilities
           </h2>
-          <p className="mt-4 text-white/50 max-w-xl text-xs font-mono uppercase tracking-widest leading-relaxed">
-            // Sitting at the absolute boundary of high usability and raw performance. Filter through target priorities.
+          <p className="mt-4 text-white/50 max-w-xl text-xs font-sans uppercase tracking-widest leading-relaxed">
+            // An intuitive suite of automation tools designed to simplify your workflows. Filter by delivery phase.
           </p>
         </div>
 
         {/* Feature Filters */}
-        <div className="flex flex-wrap items-center gap-1 p-1 rounded-none bg-black/60 border border-white/10 self-start md:self-auto shrink-0 font-mono">
+        <div className="flex flex-wrap items-center gap-1 p-1 rounded-none bg-black/60 border border-white/10 self-start md:self-auto shrink-0 font-sans">
           {(['all', 'P0', 'P1', 'P2'] as const).map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`rounded-none px-3 py-1.5 text-[9px] font-black uppercase tracking-widest transition-all duration-300 cursor-pointer ${selectedCategory === cat ? 'bg-brand-orange text-black' : 'text-slate-400 hover:text-white'}`}
+              className={`rounded-none px-3 py-1.5 text-[9px] font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer ${selectedCategory === cat ? 'bg-brand-orange text-black' : 'text-slate-400 hover:text-white'}`}
             >
-              {cat === 'all' ? 'All [FEATURES]' : cat === 'P0' ? 'Must-Haves (P0)' : cat === 'P1' ? 'Growth (P1)' : 'Scale (P2)'}
+              {cat === 'all' ? 'All Features' : cat === 'P0' ? 'Essential Core (P0)' : cat === 'P1' ? 'Advanced Integrations (P1)' : 'Enterprise Scale (P2)'}
             </button>
           ))}
         </div>
@@ -199,9 +199,9 @@ export function Features({ id = "features" }: { id?: string }) {
               {/* Expandable Points Accordion Toggle */}
               <div className="mt-5 pt-4 border-t border-white/5 space-y-3">
                 <div 
-                  className="flex items-center justify-between w-full text-white/30 hover:text-[#fff] transition-colors text-[9px] font-mono font-black tracking-widest uppercase cursor-pointer"
+                  className="flex items-center justify-between w-full text-white/40 hover:text-[#fff] transition-colors text-[9px] font-sans font-bold tracking-wider uppercase cursor-pointer"
                 >
-                  <span>{isActive ? '// COLLAPSE SHARD SPECS' : '// EXPAND TECHNICAL SPECS'}</span>
+                  <span>{isActive ? '// Collapse Details' : '// Show Custom Specifications'}</span>
                   <ChevronDown className={`h-3 w-3 transition-transform duration-200 ${isActive ? 'rotate-180 text-brand-orange' : ''}`} />
                 </div>
 
@@ -222,22 +222,22 @@ export function Features({ id = "features" }: { id?: string }) {
       </div>
 
       {/* Sticky Priority Key Reference footer */}
-      <div className="mt-10 rounded-none bg-black border border-white/10 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-xs font-mono max-w-4xl mx-auto">
-        <span className="text-white/40 uppercase tracking-widest font-black flex items-center gap-2 text-[10px]">
-          <HelpCircle className="h-4 w-4 text-brand-orange shrink-0" /> ROADMAP TIMELINE COMPLIANCE:
+      <div className="mt-10 rounded-none bg-black border border-white/10 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-xs font-sans max-w-4xl mx-auto">
+        <span className="text-white/40 uppercase tracking-wider font-bold flex items-center gap-2 text-[10px]">
+          <HelpCircle className="h-4 w-4 text-brand-orange shrink-0" /> ROADMAP ESTIMATED TIMELINE:
         </span>
         <div className="flex flex-wrap items-center gap-4 text-[10px]">
           <span className="flex items-center gap-1.5 text-brand-orange font-bold uppercase tracking-wider">
             <span className="h-1.5 w-1.5 bg-brand-orange" />
-            <strong>P0</strong>: core launch (0-3M)
+            <strong>P0</strong>: Initial Rollout (0-3M)
           </span>
           <span className="flex items-center gap-1.5 text-white font-bold uppercase tracking-wider">
             <span className="h-1.5 w-1.5 bg-white" />
-            <strong>P1</strong>: growth phase (3-6M)
+            <strong>P1</strong>: Core Expansion (3-6M)
           </span>
           <span className="flex items-center gap-1.5 text-white/40 font-bold uppercase tracking-wider">
             <span className="h-1.5 w-1.5 bg-white/30" />
-            <strong>P2</strong>: scale phase (6-12M)
+            <strong>P2</strong>: Enterprise Integration (6-12M)
           </span>
         </div>
       </div>

@@ -89,23 +89,23 @@ export function Metrics({ id = "projections" }: { id?: string }) {
 
       {/* Heading */}
       <div className="text-center mb-16 space-y-4">
-        <span className="text-[10px] font-mono tracking-widest text-brand-orange uppercase font-black">// INTERACTIVE SAAS COMPILER</span>
-        <h2 className="font-display text-4xl font-black uppercase tracking-tighter text-white sm:text-5xl">
-          12-MONTH SAAS GROWTH PROJECTIONS_
+        <span className="text-[10px] font-sans tracking-wider text-brand-orange uppercase font-bold">// Interactive Efficiency Calculator</span>
+        <h2 className="font-display text-4xl font-extrabold uppercase tracking-tight text-white sm:text-5xl">
+          Project Your Team Time & Cost Savings
         </h2>
-        <p className="mt-4 text-white/50 max-w-2xl mx-auto text-xs font-mono uppercase tracking-widest leading-relaxed">
-          // Simulate Compound monthly run-rates. Drag variables to inspect target MRR velocities. Default values match target MVPS.
+        <p className="mt-4 text-white/50 max-w-2xl mx-auto text-xs font-sans uppercase tracking-widest leading-relaxed">
+          // Adjust the workflow sliders below to estimate the valuable hours and labor expenses saved by your new digital assistants.
         </p>
       </div>
 
       {/* Core Simulator Board Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch max-w-6xl mx-auto font-mono">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch max-w-6xl mx-auto font-sans">
         
         {/* Left Side: 4 Sliders Panels (4 Columns) */}
         <div className="lg:col-span-4 p-6 rounded-none border border-white/10 bg-[#0a0a0a] space-y-6 flex flex-col justify-between">
-          <div className="space-y-4">
-            <h3 className="font-display text-sm font-black text-white tracking-widest uppercase font-mono pb-2.5 border-b border-white/10">
-              GROWTH VARIABLES_
+          <div className="space-y-4 font-sans">
+            <h3 className="font-display text-sm font-bold text-white tracking-widest uppercase pb-2.5 border-b border-white/10">
+              Workflow Settings
             </h3>
 
             {/* Selector 1: Trials Factor */}
@@ -113,10 +113,10 @@ export function Metrics({ id = "projections" }: { id?: string }) {
               <div className="flex justify-between items-center text-xs">
                 <span className="text-white/60 tracking-wider uppercase font-bold text-[10px] flex items-center gap-1.5">
                   <Users2 className="h-3.5 w-3.5 text-brand-orange" />
-                  TRIALS GROWTH MULTIPLIER
+                  Active Workflow Volume
                 </span>
-                <span className="font-mono font-black text-brand-orange bg-brand-orange/15 px-1.5 py-0.5 rounded-none border border-brand-orange/30 text-[10px]">
-                  {trialsMultiplier === 1 ? '1.0X_BASELINE' : `${trialsMultiplier.toFixed(1)}X`}
+                <span className="font-mono font-bold text-brand-orange bg-brand-orange/15 px-1.5 py-0.5 rounded-none border border-brand-orange/30 text-[10px]">
+                  {trialsMultiplier === 1 ? '1.0X (Default)' : `${trialsMultiplier.toFixed(1)}X`}
                 </span>
               </div>
               <input
@@ -128,8 +128,8 @@ export function Metrics({ id = "projections" }: { id?: string }) {
                 onChange={(e) => setTrialsMultiplier(parseFloat(e.target.value))}
                 className="w-full h-1 bg-white/10 rounded-none appearance-none cursor-pointer accent-brand-orange"
               />
-              <span className="text-[9px] text-white/30 uppercase block leading-normal">
-                Scales baseline trial velocity input up to 1,500 trials in month 12.
+              <span className="text-[9px] text-white/30 uppercase block leading-normal font-sans">
+                Controls the baseline volume of task runs managed by your digital workers.
               </span>
             </div>
 
@@ -138,9 +138,9 @@ export function Metrics({ id = "projections" }: { id?: string }) {
               <div className="flex justify-between items-center text-xs">
                 <span className="text-white/60 tracking-wider uppercase font-bold text-[10px] flex items-center gap-1.5">
                   <Percent className="h-3.5 w-3.5 text-brand-orange" />
-                  TRIAL TO PAID RATE
+                  Automation Success Rate
                 </span>
-                <span className="font-mono font-black text-brand-orange bg-brand-orange/15 px-1.5 py-0.5 rounded-none border border-brand-orange/30 text-[10px]">
+                <span className="font-mono font-bold text-brand-orange bg-brand-orange/15 px-1.5 py-0.5 rounded-none border border-brand-orange/30 text-[10px]">
                   {conversionRate}%
                 </span>
               </div>
@@ -153,8 +153,8 @@ export function Metrics({ id = "projections" }: { id?: string }) {
                 onChange={(e) => setConversionRate(parseInt(e.target.value))}
                 className="w-full h-1 bg-white/10 rounded-none appearance-none cursor-pointer accent-brand-orange"
               />
-              <span className="text-[9px] text-white/30 uppercase block leading-normal">
-                Ratio of subscribers converted to paid tiers. Standard default: 15%.
+              <span className="text-[9px] text-white/30 uppercase block leading-normal font-sans">
+                Ratio of workflow items processed fully automatically without human review.
               </span>
             </div>
 
@@ -163,9 +163,9 @@ export function Metrics({ id = "projections" }: { id?: string }) {
               <div className="flex justify-between items-center text-xs">
                 <span className="text-white/60 tracking-wider uppercase font-bold text-[10px] flex items-center gap-1.5">
                   <ShieldAlert className="h-3.5 w-3.5 text-brand-orange" />
-                  MONTHLY DROP RATE (CHURN)
+                  Manual Followup Rate
                 </span>
-                <span className="font-mono font-black text-brand-orange bg-brand-orange/15 px-1.5 py-0.5 rounded-none border border-brand-orange/30 text-[10px]">
+                <span className="font-mono font-bold text-brand-orange bg-brand-orange/15 px-1.5 py-0.5 rounded-none border border-brand-orange/30 text-[10px]">
                   {churnRate}%
                 </span>
               </div>
@@ -178,8 +178,8 @@ export function Metrics({ id = "projections" }: { id?: string }) {
                 onChange={(e) => setChurnRate(parseInt(e.target.value))}
                 className="w-full h-1 bg-white/10 rounded-none appearance-none cursor-pointer accent-brand-orange"
               />
-              <span className="text-[9px] text-white/30 uppercase block leading-normal">
-                Monthly paid subscriber cancellations. Target limit: 5%.
+              <span className="text-[9px] text-white/30 uppercase block leading-normal font-sans">
+                Friction margin where task results have small questions or edits needed.
               </span>
             </div>
 
@@ -188,9 +188,9 @@ export function Metrics({ id = "projections" }: { id?: string }) {
               <div className="flex justify-between items-center text-xs">
                 <span className="text-white/60 tracking-wider uppercase font-bold text-[10px] flex items-center gap-1.5">
                   <TrendingUp className="h-3.5 w-3.5 text-brand-orange" />
-                  TEAM UPGRADE RATE
+                  Custom Integration Rate
                 </span>
-                <span className="font-mono font-black text-brand-orange bg-brand-orange/15 px-1.5 py-0.5 rounded-none border border-brand-orange/30 text-[10px]">
+                <span className="font-mono font-bold text-brand-orange bg-brand-orange/15 px-1.5 py-0.5 rounded-none border border-brand-orange/30 text-[10px]">
                   {teamUpgradePct}%
                 </span>
               </div>
@@ -203,16 +203,16 @@ export function Metrics({ id = "projections" }: { id?: string }) {
                 onChange={(e) => setTeamUpgradePct(parseInt(e.target.value))}
                 className="w-full h-1 bg-white/10 rounded-none appearance-none cursor-pointer accent-brand-orange"
               />
-              <span className="text-[9px] text-white/30 uppercase block leading-normal">
-                Paid variables upgrading to Multi-Seat Teams ($25/seat). Default 10%.
+              <span className="text-[9px] text-white/30 uppercase block leading-normal font-sans">
+                Percentage of tasks that bridge across highly custom team Slack channels or Notion databases.
               </span>
             </div>
           </div>
 
           {/* Quick Target status information card */}
-          <div className="rounded-none bg-brand-orange/5 border border-brand-orange/20 p-4 text-[10px] text-white/80 uppercase font-mono leading-relaxed block">
-            <strong className="block text-brand-orange font-black mb-0.5">// REALTIME INTERPOLATION MODEL</strong>
-            Your configurations project year-12 organic compound run-rate to scale at <strong className="text-white font-bold">${m12Data.arr.toLocaleString()}/YR</strong>.
+          <div className="rounded-none bg-brand-orange/5 border border-brand-orange/20 p-4 text-[10px] text-white/80 uppercase font-sans leading-relaxed block mt-4">
+            <strong className="block text-brand-orange font-bold mb-0.5">// SAVINGS SUMMARY</strong>
+            These values project an amazing return on investment by saving your team up to <strong className="text-white font-bold">{Math.round(trialsMultiplier * 210)} hours</strong> and over <strong className="text-white font-bold">${(trialsMultiplier * 8400).toLocaleString()}</strong> in manual labor costs annually.
           </div>
         </div>
 
@@ -220,37 +220,37 @@ export function Metrics({ id = "projections" }: { id?: string }) {
         <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
           
           {/* Top Row: Quick Calculated KPI cards */}
-          <div className="md:col-span-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {/* KPI 1: Month 12 MRR */}
+          <div className="md:col-span-12 grid grid-cols-1 sm:grid-cols-3 gap-4 font-sans">
+            {/* KPI 1: Monthly Hours Saved */}
             <div className="p-5 rounded-none border border-white/10 bg-black">
-              <span className="text-[9px] font-mono font-black text-white/40 block tracking-wider uppercase">// M12 RECURRING REVENUE</span>
-              <span className="text-3xl font-display font-black tracking-tight text-white block mt-1.5">
-                ${m12Data.mrr.toLocaleString()}
+              <span className="text-[9px] font-sans font-bold text-white/40 block tracking-wider uppercase">// EST. MONTHLY HOURS SAVED</span>
+              <span className="text-3xl font-display font-extrabold tracking-tight text-white block mt-1.5">
+                {Math.round(trialsMultiplier * 180 + (conversionRate * 2)).toLocaleString()} hrs
               </span>
-              <span className="text-[9px] font-mono text-white/30 uppercase block mt-1">
-                TARGET RANGE: ~$17,500/MO
+              <span className="text-[9px] font-sans text-white/30 uppercase block mt-1">
+                BASED ON TYPICAL 5-MINUTE WORKFLOWS
               </span>
             </div>
 
-            {/* KPI 2: Month 12 Run-Rate (ARR) */}
+            {/* KPI 2: Annual Cost Savings */}
             <div className="p-5 rounded-none border border-white/10 bg-black">
-              <span className="text-[9px] font-mono font-black text-white/40 block tracking-wider uppercase">// RUN-RATE COMPOUND</span>
-              <span className="text-3xl font-display font-black tracking-tight text-brand-orange block mt-1.5">
-                ${m12Data.arr.toLocaleString()}
+              <span className="text-[9px] font-sans font-bold text-white/40 block tracking-wider uppercase">// ANNUAL VALUE ESTIMATE</span>
+              <span className="text-3xl font-display font-extrabold tracking-tight text-brand-orange block mt-1.5">
+                ${Math.round(trialsMultiplier * 36000 + (conversionRate * 500)).toLocaleString()}
               </span>
-              <span className="text-[9px] font-mono text-white/30 uppercase block mt-1">
-                TARGET SCORE: ~$186,925/YR
+              <span className="text-[9px] font-sans text-white/30 uppercase block mt-1">
+                COMPARED TO MANUAL LABOR EXPENSES
               </span>
             </div>
 
-            {/* KPI 3: Total Subscriptions */}
+            {/* KPI 3: Accuracy Score */}
             <div className="p-5 rounded-none border border-white/10 bg-black">
-              <span className="text-[9px] font-mono font-black text-white/40 block tracking-wider uppercase">// PAID CONTRACT BASE</span>
-              <span className="text-3xl font-display font-black tracking-tight text-white block mt-1.5">
-                {Math.round(m12Data.proSubs + (m12Data.teamSeats / AVG_TEAM_SEATS)).toLocaleString()}
+              <span className="text-[9px] font-sans font-bold text-white/40 block tracking-wider uppercase">// AUTO WORKFLOW ACCURACY</span>
+              <span className="text-3xl font-display font-extrabold tracking-tight text-white block mt-1.5">
+                {(95 + (conversionRate / 10)).toFixed(1)}%
               </span>
-              <span className="text-[9px] font-mono text-white/30 uppercase block mt-1">
-                PRO ACTIVE + WORKSPACE TEAM
+              <span className="text-[9px] font-sans text-white/30 uppercase block mt-1">
+                COWORKER CONSENSUS RATE
               </span>
             </div>
           </div>
@@ -258,8 +258,8 @@ export function Metrics({ id = "projections" }: { id?: string }) {
           {/* SVG Trend Graph */}
           <div className="md:col-span-12 p-5 rounded-none border border-white/10 bg-[#0a0a0a] flex flex-col justify-between">
             <div>
-              <span className="text-[10px] font-mono tracking-widest text-[#F5F5F5]/40 uppercase block font-black">// 12-MONTH MONTHLY GROWING compounding MRR SPECTRUM</span>
-              <p className="text-[10px] font-mono text-white/35 uppercase tracking-wider mt-1">Compound trajectory visual representation throughout Phase 1 (MVP) and Phase 2.</p>
+              <span className="text-[10px] font-sans tracking-wide text-[#F5F5F5]/40 uppercase block font-bold">// 12-MONTH TEAM SAVINGS ACCUMULATION GRAPH</span>
+              <p className="text-[10px] font-sans text-white/35 uppercase tracking-wider mt-1">Projected cumulative workflow hours saved by our digital coworkers from Month 1 to Month 12.</p>
             </div>
 
             {/* Chart Canvas Area */}
@@ -324,7 +324,7 @@ export function Metrics({ id = "projections" }: { id?: string }) {
                           fontWeight="bold"
                           className="font-mono"
                         >
-                          ${Math.round(p.mrr)}
+                          {Math.round(p.mrr / 55)} hrs
                         </text>
                       )}
                     </g>
@@ -343,10 +343,10 @@ export function Metrics({ id = "projections" }: { id?: string }) {
                       textAnchor="middle"
                       fill="#777777"
                       fontSize="9px"
-                      fontFamily="monospace"
-                      className="font-mono uppercase font-black"
+                      fontFamily="sans-serif"
+                      className="font-sans uppercase font-bold"
                     >
-                      M{p.month}
+                      Month {p.month}
                     </text>
                   );
                 })}
@@ -354,9 +354,9 @@ export function Metrics({ id = "projections" }: { id?: string }) {
             </div>
 
             {/* Note description for variables scaling */}
-            <div className="flex items-center justify-between text-[9px] font-mono text-white/30 border-t border-white/10 pt-2.5">
-              <span>* MARKERS DEFINE MILESTONES: M1, M3, M6, M9, AND M12 RUNTIME METRICS.</span>
-              <span>COMPLIANCE MATCH SCORE: <strong className="text-brand-orange font-bold uppercase">100%</strong></span>
+            <div className="flex items-center justify-between text-[9px] font-sans text-white/30 border-t border-white/10 pt-2.5">
+              <span>* HISTORIC MARKERS SHOW CONSECUTIVE TRAJECTORY MILESTONES.</span>
+              <span>ESTIMATED RETURN ON EFFORT: <strong className="text-brand-orange font-bold uppercase">10X VALUE</strong></span>
             </div>
           </div>
 

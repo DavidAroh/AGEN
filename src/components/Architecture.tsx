@@ -17,12 +17,12 @@ export function Architecture({ id = "architecture" }: { id?: string }) {
 
       {/* Heading */}
       <div className="text-center mb-16 space-y-4">
-        <span className="text-[10px] font-mono tracking-widest text-brand-orange uppercase font-black">// ARCHITECTURAL SPECIFICATION</span>
-        <h2 className="font-display text-4xl font-black uppercase tracking-tighter text-white sm:text-5xl">
-          LAYERED RUNTIME MODEL_
+        <span className="text-[10px] font-sans tracking-wider text-brand-orange uppercase font-bold">// How It Works</span>
+        <h2 className="font-display text-4xl font-extrabold uppercase tracking-tight text-white sm:text-5xl">
+          Designed for Simple Workflows
         </h2>
-        <p className="mt-4 text-white/50 max-w-2xl mx-auto text-xs font-mono uppercase tracking-widest leading-relaxed">
-          // Isolating core components into standard high-efficiency layers. Click any layer below to inspect the telemetry spec.
+        <p className="mt-4 text-white/50 max-w-2xl mx-auto text-xs font-sans uppercase tracking-[0.1em] leading-relaxed">
+          // Coordinating task processing in clean, secure system layers. Click any layer below to inspect how we protect your tasks.
         </p>
       </div>
 
@@ -32,8 +32,8 @@ export function Architecture({ id = "architecture" }: { id?: string }) {
         {/* Left Side: Modular layered stack buttons representation (7 Columns) */}
         <div className="lg:col-span-7 flex flex-col justify-between space-y-4">
           <div className="space-y-3">
-            <span className="text-[10px] font-mono tracking-widest text-white/40 uppercase block font-black mb-2">
-              // CLASSIFIED STACK CONTROLS
+            <span className="text-[10px] font-sans tracking-wide text-white/40 uppercase block font-bold mb-2">
+              // Interactive System Layers
             </span>
 
             <div className="flex flex-col gap-2.5">
@@ -71,18 +71,18 @@ export function Architecture({ id = "architecture" }: { id?: string }) {
           </div>
 
           {/* Architecture core values badges */}
-          <div className="pt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 text-left text-[10px] font-mono leading-relaxed text-white/50 font-semibold">
+          <div className="pt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 text-left text-[10px] font-sans leading-relaxed text-white/50 font-semibold">
             <div className="p-4 rounded-none bg-black border border-white/10">
-              <span className="text-brand-orange block font-black uppercase tracking-wider mb-1">⚡ STREAMING_FIRST</span>
-              Outputs streamed in real time via secure parallel endpoints.
+              <span className="text-brand-orange block font-bold uppercase tracking-wider mb-1">⚡ Real-time Stream</span>
+              Outputs are delivered instantly to your screen as they complete.
             </div>
             <div className="p-4 rounded-none bg-black border border-white/10">
-              <span className="text-brand-orange block font-black uppercase tracking-wider mb-1">🔄 STATELESS</span>
-              Isolate jobs cleanly with stateless, secure workspace workers.
+              <span className="text-brand-orange block font-bold uppercase tracking-wider mb-1">🔄 Safe Sandbox</span>
+              Runs tasks inside secure, isolated environments to protect data.
             </div>
             <div className="p-4 rounded-none bg-black border border-white/10">
-              <span className="text-brand-orange block font-black uppercase tracking-wider mb-1">🔑 VAULT SECURE</span>
-              Credentials secured with hardware isolation levels.
+              <span className="text-brand-orange block font-bold uppercase tracking-wider mb-1">🔑 Solid Security</span>
+              Workspace keys and accounts are fully locked and protected.
             </div>
           </div>
         </div>
@@ -103,20 +103,20 @@ export function Architecture({ id = "architecture" }: { id?: string }) {
 
               <div className="space-y-6">
                 <div>
-                  <span className="text-[9px] font-mono font-black uppercase tracking-widest text-[#F5F5F5]/40">// ACTIVE LAYER DEFINITIONS:</span>
-                  <h3 className="font-display text-2xl font-black uppercase tracking-tight text-white mt-1">
+                  <span className="text-[9px] font-sans font-bold uppercase tracking-wider text-[#F5F5F5]/40">// Selected Layer Specification:</span>
+                  <h3 className="font-display text-2xl font-extrabold uppercase tracking-tight text-white mt-1">
                     {activeLayer.name}
                   </h3>
-                  <p className="text-[10px] font-mono uppercase tracking-widest text-brand-orange mt-1">
-                    [TECH] // <span className="text-white font-bold">{activeLayer.tech}</span>
+                  <p className="text-[10px] font-sans uppercase tracking-wider text-brand-orange mt-1">
+                    Integration Technology // <span className="text-white font-bold">{activeLayer.tech}</span>
                   </p>
                 </div>
 
                 <div className="border-t border-white/15 pt-5">
-                  <span className="text-[9px] font-mono font-black uppercase tracking-widest text-white/40 block mb-3">// CORE LOGIC STATEMENTS</span>
+                  <span className="text-[9px] font-sans font-bold uppercase tracking-wider text-white/40 block mb-3">// Core Actions & Behaviors</span>
                   <ul className="space-y-3 text-xs text-white/50">
                     {activeLayer.details.map((detail, dIdx) => (
-                      <li key={dIdx} className="flex items-start gap-2 text-[11px] font-mono uppercase tracking-wider">
+                      <li key={dIdx} className="flex items-start gap-2 text-[11px] font-sans uppercase tracking-wider">
                         <Check className="h-4 w-4 text-brand-orange shrink-0 mt-0.5" />
                         <span className="leading-relaxed text-white/70">{detail}</span>
                       </li>
@@ -125,20 +125,10 @@ export function Architecture({ id = "architecture" }: { id?: string }) {
                 </div>
               </div>
 
-              {/* Micro diagnostic console block */}
-              <div className="pt-6 border-t border-white/15 space-y-2 mt-6 font-mono">
-                <div className="flex items-center justify-between text-[9px] text-[#F5F5F5]/40 font-black">
-                  <span>TELEMETRY STAGE LINK:</span>
-                  <span className="text-brand-orange flex items-center gap-1 font-black">
-                    <span className="h-1.5 w-1.5 bg-brand-orange animate-pulse" />
-                    LIVE PORT 3000
-                  </span>
-                </div>
-                <div className="rounded-none bg-black p-3 text-[10px] leading-relaxed text-white/65 block border border-white/10">
-                  <p className="text-white/30 block mb-1">// Route execution response query trace:</p>
-                  <p className="text-brand-orange font-bold uppercase">GET /api/v1/sandbox/telemetry/probe</p>
-                  <p className="text-white tracking-widest font-bold">200 NATIVE_OK — 18ms latency</p>
-                </div>
+              {/* Core Security Assurance */}
+              <div className="pt-6 border-t border-white/15 space-y-2 mt-6 text-xs text-white/50 font-sans">
+                <span className="text-brand-orange text-[10px] font-bold block uppercase tracking-wider">// Secure Operational Guarantee</span>
+                <p className="leading-relaxed text-white/60">We isolate every digital coworker securely. Your integrations, passwords, and task parameters will never be shared or used to train external models.</p>
               </div>
 
             </motion.div>

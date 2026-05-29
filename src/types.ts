@@ -11,6 +11,8 @@ export interface AgentTemplate {
     description: string;
     status: 'idle' | 'running' | 'success' | 'warn';
     logName: string;
+    estimatedDuration: string;
+    logSource: string;
   }[];
   thoughts: string[];
   outputs: {
@@ -29,11 +31,11 @@ export const AGENT_TEMPLATES: AgentTemplate[] = [
     recommendedTools: ['browser-fetch', 'gmail-client', 'notion-vault', 'twitter-mcp'],
     suggestedModel: 'auto-route',
     steps: [
-      { title: 'Retrieve Transcript', description: 'Fetch YouTube API or scrape transcript notes', status: 'idle', logName: 'browser-fetch' },
-      { title: 'Draft Twitter Thread', description: 'Format 5 cohesive tweets from key concepts', status: 'idle', logName: 'gemini-flash' },
-      { title: 'Compose Newsletter', description: 'Write Markdown email matching tone guidelines', status: 'idle', logName: 'gemini-flash' },
-      { title: 'Draft LinkedIn Post', description: 'Establish high-impact outline and bullet callouts', status: 'idle', logName: 'gemini-flash' },
-      { title: 'Publish Drafts', description: 'Save items inside Notion workspace team database', status: 'idle', logName: 'notion-vault' }
+      { title: 'Retrieve Transcript', description: 'Fetch YouTube API or scrape transcript notes', status: 'idle', logName: 'browser-fetch', estimatedDuration: '1.2s', logSource: 'youtube-scraper-mcp' },
+      { title: 'Draft Twitter Thread', description: 'Format 5 cohesive tweets from key concepts', status: 'idle', logName: 'gemini-flash', estimatedDuration: '1.8s', logSource: 'gemini-flash-api' },
+      { title: 'Compose Newsletter', description: 'Write Markdown email matching tone guidelines', status: 'idle', logName: 'gemini-flash', estimatedDuration: '2.1s', logSource: 'gemini-flash-api' },
+      { title: 'Draft LinkedIn Post', description: 'Establish high-impact outline and bullet callouts', status: 'idle', logName: 'gemini-flash', estimatedDuration: '1.4s', logSource: 'gemini-flash-api' },
+      { title: 'Publish Drafts', description: 'Save items inside Notion workspace team database', status: 'idle', logName: 'notion-vault', estimatedDuration: '0.9s', logSource: 'notion-vault-mcp' }
     ],
     thoughts: [
       '🔮 Initializing orchestrator: Analyzing content pipeline requirements...',
@@ -70,10 +72,10 @@ This week, we took a hard look at our agentic workflows. We discovered that 80% 
     recommendedTools: ['browser-fetch', 'crunchbase', 'linkedin-mcp', 'slack-vault'],
     suggestedModel: 'claude-3-5',
     steps: [
-      { title: 'Search Healthcare SaaS', description: 'Filter target lists matching ICP parameters', status: 'idle', logName: 'crunchbase' },
-      { title: 'Analyze Landing Pages', description: 'Scrape homepage headings to extract value statement', status: 'idle', logName: 'browser-fetch' },
-      { title: 'Craft Bespoke Pitch', description: 'Draft short outreach message reference pain points', status: 'idle', logName: 'claude-3-5' },
-      { title: 'Check Human Approval', description: 'Queue drafts for supervisor click approval', status: 'idle', logName: 'human-in-loop' }
+      { title: 'Search Healthcare SaaS', description: 'Filter target lists matching ICP parameters', status: 'idle', logName: 'crunchbase', estimatedDuration: '1.5s', logSource: 'crunchbase-api-mcp' },
+      { title: 'Analyze Landing Pages', description: 'Scrape homepage headings to extract value statement', status: 'idle', logName: 'browser-fetch', estimatedDuration: '2.4s', logSource: 'browser-fetch-mcp' },
+      { title: 'Craft Bespoke Pitch', description: 'Draft short outreach message reference pain points', status: 'idle', logName: 'claude-3-5', estimatedDuration: '1.6s', logSource: 'claude-3-5-sonnet' },
+      { title: 'Check Human Approval', description: 'Queue drafts for supervisor click approval', status: 'idle', logName: 'human-in-loop', estimatedDuration: '0.5s', logSource: 'human-in-loop' }
     ],
     thoughts: [
       '🔮 Targeting criteria: SaaS Founders & Healthcare (Seed to Series A)',
@@ -100,10 +102,10 @@ This week, we took a hard look at our agentic workflows. We discovered that 80% 
     recommendedTools: ['github-mcp', 'browser-fetch', 'slack-vault'],
     suggestedModel: 'gpt-4o',
     steps: [
-      { title: 'Intercept Webhook', description: 'Capture pull request open event payload', status: 'idle', logName: 'github-mcp' },
-      { title: 'Ingest Diff Patch', description: 'Extract file modifications and nested paths', status: 'idle', logName: 'github-mcp' },
-      { title: 'Review Code Security', description: 'Evaluate cryptographic and validation vulnerabilities', status: 'idle', logName: 'gpt-4o' },
-      { title: 'Post Review Comments', description: 'Draft inline annotations on specific lines', status: 'idle', logName: 'github-mcp' }
+      { title: 'Intercept Webhook', description: 'Capture pull request open event payload', status: 'idle', logName: 'github-mcp', estimatedDuration: '0.3s', logSource: 'github-webhook-trigger' },
+      { title: 'Ingest Diff Patch', description: 'Extract file modifications and nested paths', status: 'idle', logName: 'github-mcp', estimatedDuration: '1.1s', logSource: 'github-api-connector' },
+      { title: 'Review Code Security', description: 'Evaluate cryptographic and validation vulnerabilities', status: 'idle', logName: 'gpt-4o', estimatedDuration: '3.2s', logSource: 'gpt-4o-reasoning' },
+      { title: 'Post Review Comments', description: 'Draft inline annotations on specific lines', status: 'idle', logName: 'github-mcp', estimatedDuration: '1.5s', logSource: 'github-pr-comments-mcp' }
     ],
     thoughts: [
       '🔮 Webhook listener activated. Intercepted PR #240. Author: @dev-lucas',
@@ -137,10 +139,10 @@ await client.query(query, [req.body.id]);
     recommendedTools: ['browser-fetch', 'google-sheets-mcp', 'slack-vault'],
     suggestedModel: 'auto-route',
     steps: [
-      { title: 'Scrape Competitor Site', description: 'Crawl shoes catalog grid page prices', status: 'idle', logName: 'browser-fetch' },
-      { title: 'Compare Price Delta', description: 'Map items to internal master dataset', status: 'idle', logName: 'gemini-flash' },
-      { title: 'Update Google Sheet', description: 'Append columns with date and latest rates', status: 'idle', logName: 'google-sheets-mcp' },
-      { title: 'Push Alert to Slack', description: 'Send bulleted discount alerts to channel', status: 'idle', logName: 'slack-vault' }
+      { title: 'Scrape Competitor Site', description: 'Crawl shoes catalog grid page prices', status: 'idle', logName: 'browser-fetch', estimatedDuration: '2.6s', logSource: 'browser-fetch-mcp' },
+      { title: 'Compare Price Delta', description: 'Map items to internal master dataset', status: 'idle', logName: 'gemini-flash', estimatedDuration: '0.8s', logSource: 'gemini-flash-api' },
+      { title: 'Update Google Sheet', description: 'Append columns with date and latest rates', status: 'idle', logName: 'google-sheets-mcp', estimatedDuration: '1.2s', logSource: 'google-sheets-mcp' },
+      { title: 'Push Alert to Slack', description: 'Send bulleted discount alerts to channel', status: 'idle', logName: 'slack-vault', estimatedDuration: '0.7s', logSource: 'slack-webhook-mcp' }
     ],
     thoughts: [
       '🔮 Initializing scraping workflow: Competitor sneaker pricing watchdog...',
@@ -171,11 +173,11 @@ export interface Benchmark {
 }
 
 export const COMPETITORS: Benchmark[] = [
-  { competitor: 'Claude Managed Agents', strengths: 'Reliable infra, deep Claude tools', weaknesses: 'Claude-only, lacks visual builder', advantage: 'Multi-provider routing, visual workspace' },
-  { competitor: 'OpenAI Agents SDK', strengths: 'Strong ecosystem, good function calls', weaknesses: 'GPT-only, requires core coding', advantage: 'Provider-agnostic, natural setup' },
-  { competitor: 'LangGraph / CrewAI', strengths: 'Powerful customization structures', weaknesses: 'High complexity, no UI', advantage: '5-min setup, drag-and-drop builder' },
-  { competitor: 'n8n / Zapier', strengths: 'Large API libraries, friendly UI', weaknesses: 'Deterministic, weak reasoning', advantage: 'Dynamic planning and auto-replanning' },
-  { competitor: 'Relevance AI', strengths: 'Enterprise targeting modules', weaknesses: 'Rigid ecosystem, expensive', advantage: 'Open MCP integrations, code eject' },
+  { competitor: 'Claude Managed Agents', strengths: 'Built by Claude company partners', weaknesses: 'Only works with Claude models, has no visual workflow editor', advantage: 'Connect Google, OpenAI, or Anthropic models with custom interfaces' },
+  { competitor: 'OpenAI Agents SDK', strengths: 'Good tool support, popular standard', weaknesses: 'Only works with OpenAI models, must write complex Python/JS code', advantage: 'Works with any provider, setup in plain English' },
+  { competitor: 'LangGraph / CrewAI', strengths: 'Powerful customization possibilities', weaknesses: 'Extremely technical setup, lacks an intuitive dashboard for teams', advantage: 'Ready-to-use templates with no complex technical configuration' },
+  { competitor: 'n8n / Zapier', strengths: 'Huge library of app connectors', weaknesses: 'Workflows are absolute and rigid, unable to handle unexpected events', advantage: 'Intelligent assistants that adjust and rethink steps to finish tasks' },
+  { competitor: 'Relevance AI', strengths: 'Functional enterprise layout', weaknesses: 'Expensive tiers, locked-in closed platform integrations', advantage: 'Cost-effective business workspaces with instantly exportable scripts' },
 ];
 
 export interface ArchLayer {

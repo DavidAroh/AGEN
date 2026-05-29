@@ -12,24 +12,24 @@ export function Compare({ id = "benchmarks" }: { id?: string }) {
 
       {/* Heading */}
       <div className="text-center mb-16 space-y-4">
-        <span className="text-[10px] font-mono tracking-widest text-brand-orange uppercase font-black">// MARKET BOUNDARY AUDIT</span>
-        <h2 className="font-display text-4xl font-black uppercase tracking-tighter text-white sm:text-5xl mt-2">
-          THE AGEN COMPARATIVE METRIC_
+        <span className="text-[10px] font-sans tracking-wider text-brand-orange uppercase font-bold">// How We Compare</span>
+        <h2 className="font-display text-4xl font-extrabold uppercase tracking-tight text-white sm:text-5xl mt-2">
+          Comparing the Approaches
         </h2>
-        <p className="mt-4 text-white/50 max-w-2xl mx-auto text-xs font-mono uppercase tracking-widest leading-relaxed">
-          // While incumbents restrict your workflows or mandate nested code config, AGEN delegates tools and model orchestration smoothly.
+        <p className="mt-4 text-white/50 max-w-2xl mx-auto text-xs font-sans uppercase tracking-[0.1em] leading-relaxed">
+          // See how Agen helps your team save hours of coding compared to traditional, restrictive platforms.
         </p>
       </div>
 
       {/* Comparison Grid Board */}
       <div className="max-w-6xl mx-auto overflow-x-auto rounded-none border border-white/10 bg-black shadow-2xl block">
-        <table className="w-full min-w-[700px] border-collapse text-left text-xs md:text-sm font-mono">
+        <table className="w-full min-w-[700px] border-collapse text-left text-xs md:text-sm font-sans">
           <thead>
-            <tr className="border-b border-white/10 bg-black text-[10px] uppercase tracking-wider font-black">
-              <th className="p-4 md:p-5 font-display text-sm font-black text-white max-w-xs">// COMPETITOR PLATFORM</th>
-              <th className="p-4 md:p-5 text-white/40">STRENGTH SPEC</th>
-              <th className="p-4 md:p-5 text-white/40">LIMITATION AUDIT</th>
-              <th className="p-4 md:p-5 font-display text-sm font-black text-brand-orange bg-brand-orange/10">★ AGEN COMPLIANCE</th>
+            <tr className="border-b border-white/10 bg-black text-[10px] uppercase tracking-wider font-bold">
+              <th className="p-4 md:p-5 font-display text-sm font-bold text-white max-w-xs">// Competitor Platform</th>
+              <th className="p-4 md:p-5 text-white/50">Core Advantage</th>
+              <th className="p-4 md:p-5 text-white/50">Common Limitations</th>
+              <th className="p-4 md:p-5 font-display text-sm font-bold text-brand-orange bg-brand-orange/10">★ Agen Workspace Solution</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-white/10 uppercase tracking-wide text-[11px] text-white/70">
@@ -70,8 +70,8 @@ export function Compare({ id = "benchmarks" }: { id?: string }) {
       </div>
 
       {/* Trust summary tag line */}
-      <p className="text-center text-[9px] font-mono text-white/30 tracking-widest uppercase mt-6">
-        * Comparative metrics compiled directly from initial product requirement research and industry user trial logs.
+      <p className="text-center text-[9px] font-sans text-white/30 tracking-wider uppercase mt-6">
+        * Comparisons gathered from public feature listings and customer feedback survey statistics.
       </p>
 
     </section>

@@ -17,11 +17,11 @@ export function Header({ onScrollToSection, onLaunchSandbox }: HeaderProps) {
             <div className="absolute -top-1 -right-1 h-1.5 w-1.5 bg-brand-orange animate-ping" />
           </div>
           <div className="flex items-baseline">
-            <span className="font-display text-xl font-black tracking-tighter uppercase italic text-white">
-              AGEN<span className="text-brand-orange">_</span>
+            <span className="font-display text-xl font-extrabold tracking-tight text-white">
+              AGEN<span className="text-brand-orange text-sm font-semibold ml-0.5 lowercase tracking-normal">workplace</span>
             </span>
-            <span className="ml-1.5 bg-white/10 px-1 py-0.5 text-[8px] font-black uppercase tracking-wider text-white/60">
-              v1.0
+            <span className="ml-2 bg-emerald-500/10 px-2 py-0.5 text-[8px] font-bold tracking-wider text-emerald-400 uppercase border border-emerald-500/20">
+              Active
             </span>
           </div>
         </div>
@@ -30,48 +30,48 @@ export function Header({ onScrollToSection, onLaunchSandbox }: HeaderProps) {
         <nav className="hidden md:flex items-center gap-8">
           <button
             onClick={() => onScrollToSection('sandbox')}
-            className="text-xs font-bold uppercase tracking-widest text-white/60 transition-colors hover:text-brand-orange cursor-pointer"
+            className="text-xs font-semibold uppercase tracking-wider text-white/70 transition-colors hover:text-brand-orange cursor-pointer"
           >
-            Agent Sandbox
+            Agent Builder
           </button>
           <button
             onClick={() => onScrollToSection('features')}
-            className="text-xs font-bold uppercase tracking-widest text-white/60 transition-colors hover:text-brand-orange cursor-pointer"
+            className="text-xs font-semibold uppercase tracking-wider text-white/70 transition-colors hover:text-brand-orange cursor-pointer"
           >
-            Features
+            Key Features
           </button>
           <button
             onClick={() => onScrollToSection('architecture')}
-            className="text-xs font-bold uppercase tracking-widest text-white/60 transition-colors hover:text-brand-orange cursor-pointer"
+            className="text-xs font-semibold uppercase tracking-wider text-white/70 transition-colors hover:text-brand-orange cursor-pointer"
           >
-            Architecture
+            How It Works
           </button>
           <button
             onClick={() => onScrollToSection('benchmarks')}
-            className="text-xs font-bold uppercase tracking-widest text-white/60 transition-colors hover:text-brand-orange cursor-pointer"
+            className="text-xs font-semibold uppercase tracking-wider text-white/70 transition-colors hover:text-brand-orange cursor-pointer"
           >
-            Compare
+            Comparisons
           </button>
           <button
             onClick={() => onScrollToSection('pricing')}
-            className="text-xs font-bold uppercase tracking-widest text-white/60 transition-colors hover:text-brand-orange cursor-pointer"
+            className="text-xs font-semibold uppercase tracking-wider text-white/70 transition-colors hover:text-brand-orange cursor-pointer"
           >
-            Pricing
+            Pricing Plans
           </button>
           <button
             onClick={() => onScrollToSection('projections')}
-            className="text-[10px] font-mono font-bold text-brand-orange hover:text-[#ff9d54] cursor-pointer flex items-center gap-1.5 bg-brand-orange/5 px-2.5 py-1 rounded-none border border-brand-orange/20 uppercase tracking-wider"
+            className="text-[10px] font-sans font-bold text-brand-orange hover:text-[#ff9d54] cursor-pointer flex items-center gap-1.5 bg-brand-orange/5 px-2.5 py-1 rounded-none border border-brand-orange/20 uppercase tracking-wider"
           >
-            <span>Revenue Simulator</span>
+            <span>Interactive Simulator</span>
             <span className="h-1.5 w-1.5 bg-brand-orange animate-pulse" />
           </button>
         </nav>
 
         {/* Action button & Status */}
         <div className="flex items-center gap-4">
-          <div className="hidden lg:flex items-center gap-2 rounded-none bg-brand-orange/5 border border-brand-orange/20 px-3 py-1 text-[10px] uppercase font-mono text-brand-orange tracking-widest">
-            <Radio className="h-3 w-3 animate-pulse" />
-            <span>Node: Active</span>
+          <div className="hidden lg:flex items-center gap-2 rounded-none bg-emerald-500/5 border border-emerald-500/20 px-3 py-1 text-[10px] uppercase font-sans font-semibold text-emerald-400 tracking-wider">
+            <Radio className="h-3 w-3 animate-pulse text-emerald-400" />
+            <span>Platform Online</span>
           </div>
           <button
             onClick={onLaunchSandbox}

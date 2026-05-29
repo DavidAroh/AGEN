@@ -90,13 +90,13 @@ export function Pricing({ id = "pricing" }: { id?: string }) {
       <div className="absolute top-0 bottom-0 right-6 w-[1px] bg-white/5 hidden xl:block pointer-events-none" />
 
       {/* Title */}
-      <div className="text-center mb-12 space-y-4 font-mono">
-        <span className="text-[10px] font-mono tracking-widest text-brand-orange uppercase font-black">// VALUE-FIRST SUBSCRIPTION COMPLIANCE</span>
-        <h2 className="font-display text-4xl font-black uppercase tracking-tighter text-white sm:text-5xl mt-2">
-          SIMPLE SUBSCRIPTION TIERS_
+      <div className="text-center mb-12 space-y-4 font-sans">
+        <span className="text-[10px] font-sans tracking-wider text-brand-orange uppercase font-bold">// Simple, Predictive Pricing</span>
+        <h2 className="font-display text-4xl font-extrabold uppercase tracking-tight text-white sm:text-5xl mt-2">
+          Affordable Workplace Plans
         </h2>
-        <p className="mt-4 text-white/50 max-w-2xl mx-auto text-xs font-mono uppercase tracking-widest leading-relaxed">
-          // AGEN implements transparent, predictable resource pricing layout. Start evaluating without a credit card commitment.
+        <p className="mt-4 text-white/50 max-w-2xl mx-auto text-xs font-sans uppercase tracking-widest leading-relaxed">
+          // Select the level of workflow automation that fits your team size. Start building immediately without a credit card.
         </p>
 
         {/* Pricing Toggle Switch */}
