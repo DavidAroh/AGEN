@@ -570,7 +570,11 @@ export async function startWorkflow() {
                       const isSelected = selectedStepIndex === idx;
                       return (
                         <React.Fragment key={idx}>
-                          <div className="relative">
+                          <motion.div 
+                            className="relative"
+                            whileHover={{ scale: 1.05 }}
+                            transition={{ type: "spring", stiffness: 450, damping: 25 }}
+                          >
                             <button
                               onClick={() => setSelectedStepIndex(selectedStepIndex === idx ? null : idx)}
                               onMouseEnter={() => setHoveredStepIndex(idx)}
@@ -624,7 +628,7 @@ export async function startWorkflow() {
                                 </motion.div>
                               )}
                             </AnimatePresence>
-                          </div>
+                          </motion.div>
                           {idx < simulatedSteps.length - 1 && (
                             <ChevronRight className={`h-4 w-4 shrink-0 ${isStepSuccess ? 'text-emerald-500' : isStepRunning ? 'text-brand-orange animate-pulse' : 'text-slate-700'}`} />
                           )}
